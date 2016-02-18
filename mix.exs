@@ -1,8 +1,8 @@
-defmodule TimexSugar.Mixfile do
+defmodule TimexSpan.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :timex_sugar,
+    [app: :timex_span,
      version: "0.0.1",
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,

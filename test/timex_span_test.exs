@@ -1,6 +1,6 @@
-defmodule TimexSugarTest do
+defmodule TimexSpanTest do
   use ExUnit.Case
-  doctest TimexSugar
+  doctest TimexSpan
 
   test "the truth" do
     assert 1 + 1 == 2

@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :timex_sugar, key: :value
+#     config :timex_span, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:timex_sugar, :key)
+#     Application.get_env(:timex_span, :key)
 #
 # Or configure a 3rd-party app:
 #

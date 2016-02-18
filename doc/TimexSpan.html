@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.11.4">
-    <title>TimexSugar – timex_sugar v0.0.1</title>
+    <title>TimexSpan – timex_span v0.0.1</title>
     <link rel="stylesheet" href="dist/app-1e374caa3d.css" />
     <script src="dist/sidebar_items.js"></script>
   </head>
@@ -24,7 +24,7 @@
   <a href="api-reference.html" class="sidebar-projectLink">
     <div class="sidebar-projectDetails">
       <h1 class="sidebar-projectName">
-        timex_sugar
+        timex_span
       </h1>
       <h2 class="sidebar-projectVersion">
         v0.0.1
@@ -59,8 +59,8 @@
 
 
       <h1>
-        <small class="visible-xs">timex_sugar v0.0.1</small>
-        TimexSugar
+        <small class="visible-xs">timex_span v0.0.1</small>
+        TimexSpan
         
         
       </h1>
@@ -76,6 +76,19 @@
             Summary
           </h1>
           
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+    <div class="summary-row">
+  <div class="summary-signature">
+    <a href="#t:span/0">span()</a>
+  </div>
+  
+</div>
+
+  </div>
+
 
           
   <div class="summary-functions summary">
@@ -104,7 +117,7 @@ the given span</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#days/2">days(num_days, span \\ %TimexSugar.Span{})</a>
+    <a href="#days/2">days(num_days, span \\ %TimexSpan{})</a>
   </div>
   
     <div class="summary-synopsis"><p>Create a span of days equal to the specified number.  Optionally
@@ -125,7 +138,7 @@ the given span</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#hours/2">hours(num_hours, span \\ %TimexSugar.Span{})</a>
+    <a href="#hours/2">hours(num_hours, span \\ %TimexSpan{})</a>
   </div>
   
     <div class="summary-synopsis"><p>Create a span of hours equal to the specified number.  Optionally
@@ -136,7 +149,7 @@ second argument</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#mins/2">mins(num_mins, span \\ %TimexSugar.Span{})</a>
+    <a href="#mins/2">mins(num_mins, span \\ %TimexSpan{})</a>
   </div>
   
     <div class="summary-synopsis"><p>Create a span of mins equal to the specified number.  Optionally
@@ -147,7 +160,13 @@ second argument</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#secs/2">secs(num_secs, span \\ %TimexSugar.Span{})</a>
+    <a href="#negate/1">negate(timex_span)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#secs/2">secs(num_secs, span \\ %TimexSpan{})</a>
   </div>
   
     <div class="summary-synopsis"><p>Create a span of secs equal to the specified number.  Optionally
@@ -158,7 +177,13 @@ second argument</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#weeks/2">weeks(num_weeks, span \\ %TimexSugar.Span{})</a>
+    <a href="#to_keyword_list/1">to_keyword_list(span)</a>
+  </div>
+  
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#weeks/2">weeks(num_weeks, span \\ %TimexSpan{})</a>
   </div>
   
     <div class="summary-synopsis"><p>Create a span of weeks equal to the specified number.  Optionally
@@ -169,7 +194,7 @@ second argument</p>
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#years/2">years(num_years, span \\ %TimexSugar.Span{})</a>
+    <a href="#years/2">years(num_years, span \\ %TimexSpan{})</a>
   </div>
   
     <div class="summary-synopsis"><p>Create a span of years equal to the specified number.  Optionally
@@ -189,6 +214,22 @@ second argument</p>
         </section>
       
 
+      
+        <section id="types" class="types details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#types">
+              <i class="icon-link"></i>
+            </a>
+            Types
+          </h1>
+          <div class="types-list">
+            <div id="t:span/0" class="type-detail">
+  <pre><code class="elixir"><a href="#t:span/0">span</a> :: struct</code></pre>
+  
+</div>
+
+          </div>
+        </section>
       
 
       
@@ -212,7 +253,7 @@ second argument</p>
       <h4 class="specs-title">Specs</h4>
       <div class="specs-list">
         
-          <pre><code class="elixir">ago(span :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a>) :: Timex.DateTime.t</code></pre>
+          <pre><code class="elixir">ago(<a href="#t:span/0">span</a>) :: Timex.DateTime.t</code></pre>
         
       </div>
     </div>
@@ -236,7 +277,7 @@ the given span. Equivalent to calling <code class="inline">before(Timex.Date.now
       <h4 class="specs-title">Specs</h4>
       <div class="specs-list">
         
-          <pre><code class="elixir">before(span :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a>, date :: Timex.DateTime.t) :: Timex.DateTime.t</code></pre>
+          <pre><code class="elixir">before(<a href="#t:span/0">span</a>, date :: Timex.DateTime.t) :: Timex.DateTime.t</code></pre>
         
       </div>
     </div>
@@ -245,15 +286,13 @@ the given span. Equivalent to calling <code class="inline">before(Timex.Date.now
     <p>Return a DateTime that is earlier than the given datetime by 
 the given span.  </p>
 <h2>Examples</h2>
-<pre><code class="iex elixir">iex&gt; span = Elixir.TimexSugar.years(5)
+<pre><code class="iex elixir">iex&gt; span = TimexSpan.years(5)
 iex&gt; date = Timex.Date.from({{2015, 6, 24}, {14, 27, 52}})
-iex&gt; Elixir.TimexSugar.before(span, date)
-%Timex.DateTime{calendar: :gregorian, day: 24, hour: 14, minute: 27, month: 6,
- ms: 0, second: 52,
- timezone: %Timex.TimezoneInfo{abbreviation: &quot;UTC&quot;, from: :min,
-  full_name: &quot;UTC&quot;, offset_std: 0, offset_utc: 0, until: :max}, year: 2010}
+iex&gt; %Timex.DateTime{year: year} = TimexSpan.before(span, date)
+iex&gt; year
+2010
 
-iex&gt; import TimexSugar
+iex&gt; import TimexSpan
 iex&gt; date = Timex.Date.from({{2015, 6, 24}, {14, 27, 52}})
 iex&gt; 5 |&gt; years |&gt; before(date)
 %Timex.DateTime{calendar: :gregorian, day: 24, hour: 14, minute: 27, month: 6,
@@ -268,7 +307,7 @@ iex&gt; 5 |&gt; years |&gt; before(date)
     <a href="#days/2" class="detail-link" title="Link to this function">
       <i class="icon-link"></i>
     </a>
-    <span class="signature">days(num_days, span \\ %TimexSugar.Span{})</span>
+    <span class="signature">days(num_days, span \\ %TimexSpan{})</span>
       
   </div>
   
@@ -276,7 +315,7 @@ iex&gt; 5 |&gt; years |&gt; before(date)
       <h4 class="specs-title">Specs</h4>
       <div class="specs-list">
         
-          <pre><code class="elixir">days(number, span :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a>) :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a></code></pre>
+          <pre><code class="elixir">days(number, <a href="#t:span/0">span</a>) :: <a href="#t:span/0">span</a></code></pre>
         
       </div>
     </div>
@@ -286,12 +325,12 @@ iex&gt; 5 |&gt; years |&gt; before(date)
 adds or replaces the <em>day</em> component of a span passed in as its
 second argument.</p>
 <h2>Examples</h2>
-<pre><code class="iex elixir">iex&gt; Elixir.TimexSugar.days(4)
-%Elixir.TimexSugar.Span{days: 4}
+<pre><code class="iex elixir">iex&gt; TimexSpan.days(4)
+%TimexSpan{days: 4}
 
-iex&gt; span = %Elixir.TimexSugar.Span{days: 3, secs: 2}
-iex&gt; Elixir.TimexSugar.days(4, span)
-%Elixir.TimexSugar.Span{days: 4, secs: 2}</code></pre>
+iex&gt; span = %TimexSpan{days: 3, secs: 2}
+iex&gt; TimexSpan.days(4, span)
+%TimexSpan{days: 4, secs: 2}</code></pre>
 
   </section>
 </div>
@@ -308,7 +347,7 @@ iex&gt; Elixir.TimexSugar.days(4, span)
       <h4 class="specs-title">Specs</h4>
       <div class="specs-list">
         
-          <pre><code class="elixir">from(span :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a>, date :: Timex.DateTime.t) :: Timex.DateTime.t</code></pre>
+          <pre><code class="elixir">from(<a href="#t:span/0">span</a>, date :: Timex.DateTime.t) :: Timex.DateTime.t</code></pre>
         
       </div>
     </div>
@@ -317,15 +356,15 @@ iex&gt; Elixir.TimexSugar.days(4, span)
     <p>Return a DateTime that is later than the given datetime by 
 the given span.  </p>
 <h2>Examples</h2>
-<pre><code class="iex elixir">iex&gt; span = Elixir.TimexSugar.years(5)
+<pre><code class="iex elixir">iex&gt; span = TimexSpan.years(5)
 iex&gt; date = Timex.Date.from({{2015, 6, 24}, {14, 27, 52}})
-iex&gt; Elixir.TimexSugar.from(span, date)
+iex&gt; TimexSpan.from(span, date)
 %Timex.DateTime{calendar: :gregorian, day: 24, hour: 14, minute: 27, month: 6,
  ms: 0, second: 52,
  timezone: %Timex.TimezoneInfo{abbreviation: &quot;UTC&quot;, from: :min,
   full_name: &quot;UTC&quot;, offset_std: 0, offset_utc: 0, until: :max}, year: 2020}
 
-iex&gt; import TimexSugar
+iex&gt; import TimexSpan
 iex&gt; date = Timex.Date.from({{2015, 6, 24}, {14, 27, 52}})
 iex&gt; 5 |&gt; years |&gt; from(date)
 %Timex.DateTime{calendar: :gregorian, day: 24, hour: 14, minute: 27, month: 6,
@@ -340,7 +379,7 @@ iex&gt; 5 |&gt; years |&gt; from(date)
     <a href="#hours/2" class="detail-link" title="Link to this function">
       <i class="icon-link"></i>
     </a>
-    <span class="signature">hours(num_hours, span \\ %TimexSugar.Span{})</span>
+    <span class="signature">hours(num_hours, span \\ %TimexSpan{})</span>
       
   </div>
   
@@ -348,7 +387,7 @@ iex&gt; 5 |&gt; years |&gt; from(date)
       <h4 class="specs-title">Specs</h4>
       <div class="specs-list">
         
-          <pre><code class="elixir">hours(number, span :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a>) :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a></code></pre>
+          <pre><code class="elixir">hours(number, <a href="#t:span/0">span</a>) :: <a href="#t:span/0">span</a></code></pre>
         
       </div>
     </div>
@@ -358,12 +397,12 @@ iex&gt; 5 |&gt; years |&gt; from(date)
 adds or replaces the <em>hour</em> component of a span passed in as its
 second argument.</p>
 <h2>Examples</h2>
-<pre><code class="iex elixir">iex&gt; Elixir.TimexSugar.hours(4)
-%Elixir.TimexSugar.Span{hours: 4}
+<pre><code class="iex elixir">iex&gt; TimexSpan.hours(4)
+%TimexSpan{hours: 4}
 
-iex&gt; span = %Elixir.TimexSugar.Span{hours: 3, secs: 2}
-iex&gt; Elixir.TimexSugar.hours(4, span)
-%Elixir.TimexSugar.Span{hours: 4, secs: 2}</code></pre>
+iex&gt; span = %TimexSpan{hours: 3, secs: 2}
+iex&gt; TimexSpan.hours(4, span)
+%TimexSpan{hours: 4, secs: 2}</code></pre>
 
   </section>
 </div>
@@ -372,7 +411,7 @@ iex&gt; Elixir.TimexSugar.hours(4, span)
     <a href="#mins/2" class="detail-link" title="Link to this function">
       <i class="icon-link"></i>
     </a>
-    <span class="signature">mins(num_mins, span \\ %TimexSugar.Span{})</span>
+    <span class="signature">mins(num_mins, span \\ %TimexSpan{})</span>
       
   </div>
   
@@ -380,7 +419,7 @@ iex&gt; Elixir.TimexSugar.hours(4, span)
       <h4 class="specs-title">Specs</h4>
       <div class="specs-list">
         
-          <pre><code class="elixir">mins(number, span :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a>) :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a></code></pre>
+          <pre><code class="elixir">mins(number, <a href="#t:span/0">span</a>) :: <a href="#t:span/0">span</a></code></pre>
         
       </div>
     </div>
@@ -390,13 +429,26 @@ iex&gt; Elixir.TimexSugar.hours(4, span)
 adds or replaces the <em>min</em> component of a span passed in as its
 second argument.</p>
 <h2>Examples</h2>
-<pre><code class="iex elixir">iex&gt; Elixir.TimexSugar.mins(4)
-%Elixir.TimexSugar.Span{mins: 4}
+<pre><code class="iex elixir">iex&gt; TimexSpan.mins(4)
+%TimexSpan{mins: 4}
 
-iex&gt; span = %Elixir.TimexSugar.Span{mins: 3, secs: 2}
-iex&gt; Elixir.TimexSugar.mins(4, span)
-%Elixir.TimexSugar.Span{mins: 4, secs: 2}</code></pre>
+iex&gt; span = %TimexSpan{mins: 3, secs: 2}
+iex&gt; TimexSpan.mins(4, span)
+%TimexSpan{mins: 4, secs: 2}</code></pre>
 
+  </section>
+</div>
+<div class="detail" id="negate/1">
+  <div class="detail-header">
+    <a href="#negate/1" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">negate(timex_span)</span>
+      
+  </div>
+  
+  <section class="docstring">
+    
   </section>
 </div>
 <div class="detail" id="secs/2">
@@ -404,7 +456,7 @@ iex&gt; Elixir.TimexSugar.mins(4, span)
     <a href="#secs/2" class="detail-link" title="Link to this function">
       <i class="icon-link"></i>
     </a>
-    <span class="signature">secs(num_secs, span \\ %TimexSugar.Span{})</span>
+    <span class="signature">secs(num_secs, span \\ %TimexSpan{})</span>
       
   </div>
   
@@ -412,7 +464,7 @@ iex&gt; Elixir.TimexSugar.mins(4, span)
       <h4 class="specs-title">Specs</h4>
       <div class="specs-list">
         
-          <pre><code class="elixir">secs(number, span :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a>) :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a></code></pre>
+          <pre><code class="elixir">secs(number, <a href="#t:span/0">span</a>) :: <a href="#t:span/0">span</a></code></pre>
         
       </div>
     </div>
@@ -422,13 +474,26 @@ iex&gt; Elixir.TimexSugar.mins(4, span)
 adds or replaces the <em>sec</em> component of a span passed in as its
 second argument.</p>
 <h2>Examples</h2>
-<pre><code class="iex elixir">iex&gt; Elixir.TimexSugar.secs(4)
-%Elixir.TimexSugar.Span{secs: 4}
+<pre><code class="iex elixir">iex&gt; TimexSpan.secs(4)
+%TimexSpan{secs: 4}
 
-iex&gt; span = %Elixir.TimexSugar.Span{hours: 1, secs: 3}
-iex&gt; Elixir.TimexSugar.secs(4, span)
-%Elixir.TimexSugar.Span{hours: 1, secs: 4}</code></pre>
+iex&gt; span = %TimexSpan{hours: 1, secs: 3}
+iex&gt; TimexSpan.secs(4, span)
+%TimexSpan{hours: 1, secs: 4}</code></pre>
 
+  </section>
+</div>
+<div class="detail" id="to_keyword_list/1">
+  <div class="detail-header">
+    <a href="#to_keyword_list/1" class="detail-link" title="Link to this function">
+      <i class="icon-link"></i>
+    </a>
+    <span class="signature">to_keyword_list(span)</span>
+      
+  </div>
+  
+  <section class="docstring">
+    
   </section>
 </div>
 <div class="detail" id="weeks/2">
@@ -436,7 +501,7 @@ iex&gt; Elixir.TimexSugar.secs(4, span)
     <a href="#weeks/2" class="detail-link" title="Link to this function">
       <i class="icon-link"></i>
     </a>
-    <span class="signature">weeks(num_weeks, span \\ %TimexSugar.Span{})</span>
+    <span class="signature">weeks(num_weeks, span \\ %TimexSpan{})</span>
       
   </div>
   
@@ -444,7 +509,7 @@ iex&gt; Elixir.TimexSugar.secs(4, span)
       <h4 class="specs-title">Specs</h4>
       <div class="specs-list">
         
-          <pre><code class="elixir">weeks(number, span :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a>) :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a></code></pre>
+          <pre><code class="elixir">weeks(number, <a href="#t:span/0">span</a>) :: <a href="#t:span/0">span</a></code></pre>
         
       </div>
     </div>
@@ -454,12 +519,12 @@ iex&gt; Elixir.TimexSugar.secs(4, span)
 adds or replaces the <em>week</em> component of a span passed in as its
 second argument.</p>
 <h2>Examples</h2>
-<pre><code class="iex elixir">iex&gt; Elixir.TimexSugar.weeks(4)
-%Elixir.TimexSugar.Span{weeks: 4}
+<pre><code class="iex elixir">iex&gt; TimexSpan.weeks(4)
+%TimexSpan{weeks: 4}
 
-iex&gt; span = %Elixir.TimexSugar.Span{weeks: 3, secs: 2}
-iex&gt; Elixir.TimexSugar.weeks(4, span)
-%Elixir.TimexSugar.Span{weeks: 4, secs: 2}</code></pre>
+iex&gt; span = %TimexSpan{weeks: 3, secs: 2}
+iex&gt; TimexSpan.weeks(4, span)
+%TimexSpan{weeks: 4, secs: 2}</code></pre>
 
   </section>
 </div>
@@ -468,7 +533,7 @@ iex&gt; Elixir.TimexSugar.weeks(4, span)
     <a href="#years/2" class="detail-link" title="Link to this function">
       <i class="icon-link"></i>
     </a>
-    <span class="signature">years(num_years, span \\ %TimexSugar.Span{})</span>
+    <span class="signature">years(num_years, span \\ %TimexSpan{})</span>
       
   </div>
   
@@ -476,7 +541,7 @@ iex&gt; Elixir.TimexSugar.weeks(4, span)
       <h4 class="specs-title">Specs</h4>
       <div class="specs-list">
         
-          <pre><code class="elixir">years(number, span :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a>) :: <a href="TimexSugar.Span.html#t:t/0">TimexSugar.Span.t</a></code></pre>
+          <pre><code class="elixir">years(number, <a href="#t:span/0">span</a>) :: <a href="#t:span/0">span</a></code></pre>
         
       </div>
     </div>
@@ -486,12 +551,12 @@ iex&gt; Elixir.TimexSugar.weeks(4, span)
 adds or replaces the <em>year</em> component of a span passed in as its
 second argument.</p>
 <h2>Examples</h2>
-<pre><code class="iex elixir">iex&gt; Elixir.TimexSugar.years(4)
-%Elixir.TimexSugar.Span{years: 4}
+<pre><code class="iex elixir">iex&gt; TimexSpan.years(4)
+%TimexSpan{years: 4}
 
-iex&gt; span = %Elixir.TimexSugar.Span{years: 3, weeks: 2}
-iex&gt; Elixir.TimexSugar.years(4, span)
-%Elixir.TimexSugar.Span{years: 4, weeks: 2}</code></pre>
+iex&gt; span = %TimexSpan{years: 3, weeks: 2}
+iex&gt; TimexSpan.years(4, span)
+%TimexSpan{years: 4, weeks: 2}</code></pre>
 
   </section>
 </div>
