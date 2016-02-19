@@ -1,8 +1,6 @@
 defmodule TimexSpan do
   use Timex
 
-  @type span :: struct
-
   defstruct years: 0,
             weeks: 0,
             days: 0,
@@ -10,16 +8,7 @@ defmodule TimexSpan do
             mins: 0,
             secs: 0
 
-  def to_keyword_list(span) do
-    span |> Map.from_struct |> Map.to_list
-  end
-
-  def negate(%TimexSpan{years: years, days: days, weeks: weeks,
-    hours: hours, mins: mins, secs: secs}) do
-
-    %TimexSpan{years: -years, days: -days, weeks: -weeks,
-      hours: -hours, mins: -mins, secs: -secs}
-  end
+  @type t :: %TimexSpan{}
 
   @doc """
 
@@ -37,7 +26,7 @@ defmodule TimexSpan do
       %TimexSpan{years: 4, weeks: 2}
 
   """
-  @spec years(number, span) :: span
+  @spec years(number, t) :: t
   def years(num_years, span \\ %TimexSpan{}) when is_number(num_years) do
     %{span | years: num_years}
   end
@@ -58,7 +47,7 @@ defmodule TimexSpan do
       %TimexSpan{weeks: 4, secs: 2}
 
   """
-  @spec weeks(number, span) :: span
+  @spec weeks(number, t) :: t
   def weeks(num_weeks, span \\ %TimexSpan{}) when is_number(num_weeks) do
     %{span | weeks: num_weeks}
   end
@@ -79,7 +68,7 @@ defmodule TimexSpan do
       %TimexSpan{days: 4, secs: 2}
 
   """
-  @spec days(number, span) :: span
+  @spec days(number, t) :: t
   def days(num_days, span \\ %TimexSpan{}) when is_number(num_days) do
     %{span | days: num_days}
   end
@@ -100,7 +89,7 @@ defmodule TimexSpan do
       %TimexSpan{hours: 4, secs: 2}
 
   """
-  @spec hours(number, span) :: span
+  @spec hours(number, t) :: t
   def hours(num_hours, span \\ %TimexSpan{}) when is_number(num_hours) do
     %{span | hours: num_hours}
   end
@@ -121,7 +110,7 @@ defmodule TimexSpan do
       %TimexSpan{mins: 4, secs: 2}
 
   """
-  @spec mins(number, span) :: span
+  @spec mins(number, t) :: t
   def mins(num_mins, span \\ %TimexSpan{}) when is_number(num_mins) do
     %{span | mins: num_mins}
   end
@@ -142,7 +131,7 @@ defmodule TimexSpan do
       %TimexSpan{hours: 1, secs: 4}
 
   """
-  @spec secs(number, span) :: span
+  @spec secs(number, t) :: t
   def secs(num_secs, span \\ %TimexSpan{}) when is_number(num_secs) do
     %{span | secs: num_secs}
   end
@@ -156,19 +145,15 @@ defmodule TimexSpan do
 
       iex> span = TimexSpan.years(5)
       iex> date = Timex.Date.from({{2015, 6, 24}, {14, 27, 52}})
-      iex> %Timex.DateTime{year: year} = TimexSpan.before(span, date)
-      iex> year
-      2010
+      iex> TimexSpan.before(span, date) |> Timex.DateFormat.format!("{RFC1123}")
+      "Thu, 24 Jun 2010 14:27:52 +0000"
 
       iex> import TimexSpan
       iex> date = Timex.Date.from({{2015, 6, 24}, {14, 27, 52}})
-      iex> 5 |> years |> before(date)
-      %Timex.DateTime{calendar: :gregorian, day: 24, hour: 14, minute: 27, month: 6,
-       ms: 0, second: 52,
-       timezone: %Timex.TimezoneInfo{abbreviation: "UTC", from: :min,
-        full_name: "UTC", offset_std: 0, offset_utc: 0, until: :max}, year: 2010}
+      iex> 5 |> years |> before(date) |> Timex.DateFormat.format!("{RFC1123}")
+      "Thu, 24 Jun 2010 14:27:52 +0000"
   """
-  @spec before(span, date :: DateTime.t) :: DateTime.t
+  @spec before(t, date :: DateTime.t) :: DateTime.t
   def before(span, date) do
     keywords = span
                 |> negate
@@ -185,21 +170,15 @@ defmodule TimexSpan do
 
       iex> span = TimexSpan.years(5)
       iex> date = Timex.Date.from({{2015, 6, 24}, {14, 27, 52}})
-      iex> TimexSpan.from(span, date)
-      %Timex.DateTime{calendar: :gregorian, day: 24, hour: 14, minute: 27, month: 6,
-       ms: 0, second: 52,
-       timezone: %Timex.TimezoneInfo{abbreviation: "UTC", from: :min,
-        full_name: "UTC", offset_std: 0, offset_utc: 0, until: :max}, year: 2020}
+      iex> TimexSpan.from(span, date) |> Timex.DateFormat.format!("{RFC1123}")
+      "Wed, 24 Jun 2020 14:27:52 +0000"
 
       iex> import TimexSpan
       iex> date = Timex.Date.from({{2015, 6, 24}, {14, 27, 52}})
-      iex> 5 |> years |> from(date)
-      %Timex.DateTime{calendar: :gregorian, day: 24, hour: 14, minute: 27, month: 6,
-       ms: 0, second: 52,
-       timezone: %Timex.TimezoneInfo{abbreviation: "UTC", from: :min,
-        full_name: "UTC", offset_std: 0, offset_utc: 0, until: :max}, year: 2020}
+      iex> 5 |> years |> from(date) |> Timex.DateFormat.format!("{RFC1123}")
+      "Wed, 24 Jun 2020 14:27:52 +0000"
   """
-  @spec from(span, date :: DateTime.t) :: DateTime.t
+  @spec from(t, date :: DateTime.t) :: DateTime.t
   def from(span, date) do
     keywords = span |> to_keyword_list
     Date.shift(date, keywords)
@@ -211,9 +190,20 @@ defmodule TimexSpan do
   the given span. Equivalent to calling `before(Timex.Date.now)`
 
   """
-  @spec ago(span) :: DateTime.t
+  @spec ago(t) :: DateTime.t
   def ago(span) do
     before(span, Date.now)
+  end
+
+  defp to_keyword_list(span) do
+    span |> Map.from_struct |> Map.to_list
+  end
+
+  defp negate(%TimexSpan{years: years, days: days, weeks: weeks,
+    hours: hours, mins: mins, secs: secs}) do
+
+    %TimexSpan{years: -years, days: -days, weeks: -weeks,
+      hours: -hours, mins: -mins, secs: -secs}
   end
 
 end
